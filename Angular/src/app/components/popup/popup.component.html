@@ -1,0 +1,9 @@
+<div style="max-width: 400px; padding: 20px; background-color: #f0f0f0; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+  <h2 style="margin-top: 0; color: #333; font-size: 24px; font-weight: bold;">{{ data.title }}</h2>
+  <div style="margin-bottom: 20px; color: #666; font-size: 16px;">
+    <p>{{ data.message }}</p>
+  </div>
+  <div style="display: flex; justify-content: center;">
+    <button mat-button color="primary" [mat-dialog-close]="true" style="min-width: 100px; background-color: crimson; color: #fff; border: none; border-radius: 4px; padding: 10px 20px; font-size: 16px; cursor: pointer; transition: background-color 0.3s;">OK</button>
+  </div>
+</div>

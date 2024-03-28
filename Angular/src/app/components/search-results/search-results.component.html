@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3 mb-3">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" [(ngModel)]="searchTerm" (input)="search()" placeholder="Search movies...">
+        <button class="btn btn-primary" (click)="search()">Search</button>
+      </div>
+    </div>
+    <div class="col-md-6 offset-md-3 mb-3">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" [value]="selectedItemsText()">
+        <button class="btn btn-primary" (click)="clear()">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-2">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" (click)="toggleGenreDropdown()" aria-haspopup="true" aria-expanded="false">
+          Genre
+        </button>
+        <div class="dropdown-menu" [class.show]="showGenreDropdown">
+          <a *ngFor="let genre of genres" class="dropdown-item" (click)="selectGenre(genre)">{{ genre }}</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" (click)="toggleCategoryDropdown()" aria-haspopup="true" aria-expanded="false">
+          Category
+        </button>
+        <div class="dropdown-menu" [class.show]="showCategoryDropdown">
+          <a *ngFor="let category of categories" class="dropdown-item" (click)="selectCategory(category)">{{ category }}</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" (click)="toggleLanguageDropdown()" aria-haspopup="true" aria-expanded="false">
+          Language
+        </button>
+        <div class="dropdown-menu" [class.show]="showLanguageDropdown">
+          <a *ngFor="let language of languages" class="dropdown-item" (click)="selectLanguage(language)">{{ language }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div *ngIf="movies.length > 0; else noMovies">
+        <div class="trending-grid">
+          <div class="grid-item" *ngFor="let movie of movies">
+            <div class="card mb-3">
+              <img class="card-img-top" src="{{ movie.movie }}" alt="Description of the image">
+              <div class="card-body">
+                <h5 class="card-title">{{ movie.name }}</h5>
+                <p class="card-text">Language: {{ movie.language }}</p>
+                <p class="card-text">Genre: {{ movie.genre }}</p>
+                <a [href]="movie.link" target="_blank" class="btn btn-primary">Watch</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-template #noMovies>
+        <p>No movies found.</p>
+      </ng-template>
+    </div>
+  </div>
+</div>

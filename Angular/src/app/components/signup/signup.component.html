@@ -1,0 +1,14 @@
+<div class="signup-container">
+<form [formGroup]="signupForm" class="signup-form"(ngSubmit)="sendEmail()">
+   <h2>SIGN IN</h2>
+    <input type="text" name="name" id="name" placeholder="Your name" formControlName="name" class="input-field" />
+    <input type="email" name="email" id="email" placeholder="Your email" formControlName="email" class="input-field" />
+    <input type="password" name="password" id="password" placeholder="Your password" formControlName="password" class="input-field" />
+    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm password" formControlName="confirmPassword" class="input-field" />
+    <button type="button" [disabled]="signupForm.invalid" (click)="signup()" class="signup-button">Signup</button>
+
+</form>
+</div>
+
+
+

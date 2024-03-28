@@ -1,0 +1,61 @@
+.center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.black-container {
+  background-color: black;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: white;
+}
+
+.red-header {
+  background-color: crimson;
+}
+
+.red-header,
+.data-table th,
+.data-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.data-table tbody tr:nth-child(even) {
+  background-color: #333;
+}
+
+.data-table tbody tr:hover {
+  background-color: #444;
+}
+h2 {
+  text-align: center;
+  color: red;
+  font-family: fantasy
+}
+.circle-button {
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color:crimson;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.circle-button:hover {
+  background-color: crimson;
+}

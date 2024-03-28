@@ -1,0 +1,50 @@
+<div class="signup-container">
+  <form [formGroup]="userForm" class="signup-form" (ngSubmit)="enter()">
+     <h2>PROFILE</h2>
+     <div class="form-group">
+       <label for="name">Name</label>
+       <input type="text" name="name" id="name" placeholder="Name" formControlName="name" class="input-field" />
+     </div>
+     <div class="form-group">
+       <label for="relation">Relation</label>
+       <input type="text" name="relation" id="relation" placeholder="Relation" formControlName="relation" class="input-field" />
+     </div>
+     <button type="submit" [disabled]="userForm.invalid" class="signup-button">OK</button>
+  </form>
+</div>
+
+
+  <!-- <div class="success-message" [hidden]="!submitted">
+    <h4>You submitted successfully!</h4>
+  </div>
+</div> -->
+
+<!-- <h3>Create User</h3>
+<form (submit)="onSubmit()">
+  <div>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" [(ngModel)]="users.firstName" name="firstName" required>
+  </div>
+  <div>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" [(ngModel)]="users.lastName" name="lastName" required>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" id="email" [(ngModel)]="users.email" name="email" required>
+  </div>
+  <button type="submit">Submit</button>
+</form> -->
+<!-- <div class="signup-container">
+  <form [formGroup]="userForm" class="signup-form">
+     <h2>SIGN IN</h2>
+     <input type="text" name="name" id="name" placeholder="Name" formControlName="name" class="input-field" />
+     <input type="text" name="relation" id="relation" placeholder="Relation" formControlName="relation" class="input-field" />
+     <button type="button" [disabled]="userForm.invalid" (click)="enter()" class="signup-button">OK</button>
+  </form>
+</div> -->
+
+
+
+
+

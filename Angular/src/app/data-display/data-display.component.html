@@ -1,0 +1,26 @@
+<div class="center-container">
+  <div class="vertical-center">
+    <div class="black-container">
+      <h2>USERS</h2>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th class="red-header">Name</th>
+            <th class="red-header">Relation</th>
+            <th class="red-header">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let formDataItem of formDataList">
+            <td>{{ formDataItem.name }}</td>
+            <td>{{ formDataItem.relation }}</td>
+            <td>
+              <button (click)="handleButtonClicked()">ENTER</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <button class="circle-button" (click)="handleButtonClick()">+</button>
+</div>
